@@ -7,19 +7,17 @@
 </head>
 
 <script type="text/javascript">
-    var URL = "/public"
     $(function () {
         $("#loginForm").submit(function (e) {
             e.preventDefault(); // avoid to execute the actual submit of the form.
-
             var form = $(this);
             $.ajax({
                 type: "POST",
-                url: URL + '/login?isajax=1',
+                url: "/public/login",
                 data: form.serialize(), // serializes the form's elements.
                 success: function (data) {
                     if (data.status) {
-                        location.href = URL + "/index"
+                        location.href = "/public/index"
                     } else {
                         alert(data.info);
                     }
@@ -31,7 +29,7 @@
 <body>
 
 <form id="loginForm" method="post"
-      style="text-align:center;margin:0 auto;width:450px;height:350px;padding:20px 20px 20px 40px;">
+      style="text-align:center;margin:0 auto;width:450px;height:350px;padding:30px;">
     <fieldset>
         <legend>登录</legend>
         <div style="display: flex;flex-flow: column;">
@@ -50,6 +48,7 @@
                        oninvalid="this.setCustomValidity('请输入5位密码')"
                        oninput="this.setCustomValidity('')"/>
             </div>
+
             <div style="display: flex;flex-flow: row;margin-top: 20px;">
                 <button type="submit" style="flex: 2 1 30%">提交</button>
                 <div style="flex: 2 1"></div>
