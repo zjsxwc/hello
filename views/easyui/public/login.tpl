@@ -1,4 +1,11 @@
-{{template "../public/header.tpl"}}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>hello admin</title>
+    <script type="text/javascript" src="/static/jquery/jquery.min.js"></script>
+</head>
+
 <script type="text/javascript">
     var URL = "/public"
     $(function () {
@@ -44,10 +51,14 @@
                                oninvalid="this.setCustomValidity('请输入5位密码')"
                                oninput="this.setCustomValidity('')"/>
                     </div>
+                    <div style="display: flex;flex-flow: row;margin-top: 20px;">
+                        <button type="submit" style="flex: 2 1 30%">提交</button>
+                        <div style="flex: 2 1"></div>
+                        <button type="reset" style="flex: 2 1 30%">取消</button>
+                    </div>
                 </div>
             </fieldset>
-            <button type="submit">提交</button>
-            <button type="reset">取消</button>
+
         </form>
     </div>
 </div>
